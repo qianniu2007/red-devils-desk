@@ -106,8 +106,16 @@
     return 'FW';
   }
 
-  function avatar(player) {
-    return '<span class="avatar avatar--' + groupOf(player) + '" aria-hidden="true">' +
+  function avatar(player, px) {
+    var photos = window.UTD_PHOTOS || {};
+    var photo = photos[player.id];
+    var size = px || 32;
+
+    if (photo && photo.licence) {
+      return '<img class="avatar avatar--photo" src="assets/img/players/' + player.id + '.jpg"' +
+        ' alt="" width="' + size + '" height="' + size + '" loading="lazy" decoding="async" style="width:' + size + 'px;height:' + size + 'px">';
+    }
+    return '<span class="avatar avatar--' + groupOf(player) + '" aria-hidden="true" style="width:' + size + 'px;height:' + size + 'px">' +
       initials(player.name) + '</span>';
   }
 
@@ -184,7 +192,7 @@
         var item = document.createElement('button');
         item.type = 'button';
         item.className = 'pick-item';
-        item.innerHTML = '<span class="pick-item__who">' + avatar(p) + p.name + '</span>' +
+        item.innerHTML = '<span class="pick-item__who">' + avatar(p, 30) + p.name + '</span>' +
           '<span>' + p.apps + ' apps · ' + p.goals + ' goals</span>';
         item.addEventListener('click', function () {
           state.xi[slotId] = p.id;
@@ -335,7 +343,7 @@
       var tr = document.createElement('tr');
       var pos = p.slot.join(' / ');
       tr.innerHTML =
-        '<td class="avatar-cell">' + avatar(p) + '</td>' +
+        '<td class="avatar-cell">' + avatar(p, 36) + '</td>' +
         '<th scope="row">' + p.name + '</th>' +
         '<td><span class="pill">' + pos + '</span></td>' +
         '<td>' + p.nation + '</td>' +

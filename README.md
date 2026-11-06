@@ -6,8 +6,9 @@ appearance and goal totals, and an XI builder.
 
 Built with plain HTML, CSS and JavaScript. No framework, no build step, no
 dependencies, no back end, no tracking. Dark, glass-panelled interface in the
-grammar of the Apple Sports app — club-colour wash, an SVG crest drawn for this
-project, tabular numbers, standings-style tables.
+grammar of the Apple Sports app: a deep red surface, the real club crest, real
+player photographs (free-licensed, credited on the About page), tabular numbers
+and standings-style tables.
 
 **Live:** https://qianniu2007.github.io/red-devils-desk/
 
@@ -76,14 +77,16 @@ index.html  legends.html  seasons.html  trophies.html  quiz.html  about.html
 og-card.html                  the 1200×630 artwork, rendered to assets/img/og.png
 assets/css/site.css           one stylesheet: tokens, layout, components, pages
 assets/js/data.js             all the data
-assets/js/site.js             theme, mobile nav, reveal, counters
+assets/js/site.js             mobile nav, reveal, counters
 assets/js/legends.js          XI builder + sortable index
+assets/js/credits.js          photograph authors + licences (generated)
 assets/js/seasons.js          the SVG chart + the table
 assets/js/trophies.js         cabinet filter + decade histogram
 assets/js/quiz.js             the quiz
-assets/img/                   crest.svg, favicon.svg, favicon-32/180.png, og.png
+assets/img/                   crest-official.svg, favicon.svg, favicon-32/180.png, og.png
+assets/img/players/           22 player photographs, 320px, free-licensed
 screenshots/                  desktop and mobile captures
-tools/                        qa.mjs, shot.mjs, make-favicons.py
+tools/                        qa.mjs, shot.mjs, fetch-photos.mjs, make-favicons.py
 ```
 
 ## Where the numbers come from
@@ -102,4 +105,17 @@ record, it does not go on the page.**
 ## Not affiliated
 
 An independent, non-commercial student project. Not affiliated with Manchester
-United Football Club. No club crests or licensed imagery are used.
+United Football Club, and endorsed by nobody.
+
+Image rights, stated plainly:
+
+- **The crest** is the club's registered trademark. The file comes from Wikipedia,
+  where it is hosted as *fair use*, which does not actually license reuse on
+  another site. It is here because the brief asked for the real badge, for
+  coursework only. Replace it with `assets/img/crest.svg` (the drawn one) before
+  using this anywhere else.
+- **The 22 player photographs** are free-licensed — CC BY or CC BY-SA — with the
+  author and licence listed on the About page and in `assets/js/credits.js`.
+  Two players (Duncan Edwards, Gary Pallister) have no free portrait and keep a
+  generated initials disc instead.
+- No match photography, no broadcast stills, no licensed video.

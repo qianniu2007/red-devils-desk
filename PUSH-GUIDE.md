@@ -158,11 +158,11 @@ https://qianniu2007.github.io/red-devils-desk/
 > era and the twelve seasons since; and a ten-question quiz where every
 > correction links to the page that proves the answer.
 >
-> The interface follows the grammar of the Apple Sports app: a dark surface
-> washed in the club's red, a self-drawn SVG crest (no licensed badge), big
-> tabular numbers, and standings-style tables for the season and player data.
+> The interface follows the grammar of the Apple Sports app: a deep red surface,
+> the real club crest, 22 real player photographs (free-licensed, each author
+> credited on the About page), big tabular numbers, and standings-style tables.
 > It is written in plain HTML, CSS and JavaScript — no framework, no build step,
-> no back end, no external fonts or images — and every figure is checkable
+> no back end, no external libraries or fonts — and every figure is checkable
 > against a public record, which the About page documents along with the plan,
 > the design system and an honest account of how AI was used.
 

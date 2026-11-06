@@ -34,7 +34,7 @@
 <header class="masthead">
   <div class="wrap masthead__bar">
     <a class="brand" href="index.html">
-      <img src="assets/img/crest.svg" alt="" width="24" height="27">
+      <img src="assets/img/crest-official.svg" alt="" width="24" height="27">
       <span class="brand__name"><b>Red Devils</b><span>Data Desk</span></span>
     </a>
     <nav class="nav" data-nav aria-label="Primary">
@@ -57,7 +57,7 @@
   <section class="wrap hero">
     <div class="hero-card">
       <div class="hero-card__top">
-        <img class="crest" src="assets/img/crest.svg" alt="" width="52" height="58">
+        <img class="crest" src="assets/img/crest-official.svg" alt="" width="52" height="58">
         <div class="hero-card__club">
           <b>About</b>
           <span>Sources · process · the honest bit</span>
@@ -114,17 +114,17 @@ assets/js/           legends.js  seasons.js  trophies.js  quiz.js
       <h2>3. The design system</h2>
       <p>The reference is the Apple Sports match card on iOS: a dark surface washed in the club's colour, a crest, a large number where the score would be, and tables that look like league standings. Everything is a translucent panel over that wash — no flat grey boxes, no drop-shadow cards floating on white.</p>
       <div class="swatches" aria-label="Colour tokens">
-        <div class="swatch"><div class="swatch__chip" style="background:#06060a"></div><b>Night</b><span>#06060A · surface</span></div>
-        <div class="swatch"><div class="swatch__chip" style="background:#ef2b45"></div><b>United red</b><span>#EF2B45 · accent</span></div>
-        <div class="swatch"><div class="swatch__chip" style="background:#e3b23c"></div><b>Gold</b><span>#E3B23C · trophy years</span></div>
-        <div class="swatch"><div class="swatch__chip" style="background:#37c97a"></div><b>Live green</b><span>#37C97A · status</span></div>
-        <div class="swatch"><div class="swatch__chip" style="background:rgba(255,255,255,.09)"></div><b>Glass</b><span>9% white · panels</span></div>
-        <div class="swatch"><div class="swatch__chip" style="background:rgba(255,255,255,.5)"></div><b>Text</b><span>#F6F6F8 · 66% / 42% steps</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#160206"></div><b>Deep red</b><span>#160206 · surface</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#ee2a44"></div><b>United red</b><span>#EE2A44 · accent</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#a30f24"></div><b>Card red</b><span>#A30F24 · hero wash</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#f2c14e"></div><b>Gold</b><span>#F2C14E · trophy years</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:rgba(255,66,84,.17)"></div><b>Red glass</b><span>17% red · panels</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:rgba(255,242,243,.74)"></div><b>Text</b><span>#FFF6F6 · 74% / 50% steps</span></div>
       </div>
-      <p>Roughly 60% night, 30% glass, 10% club red — the 60-30-10 rule from the planning lesson, rebuilt for a dark UI. Red is never decoration: it marks a title-winning season, a filled position, a primary action. If something is red, it is a claim.</p>
+      <p>The 60-30-10 rule, rebuilt for a red site: roughly 60% of the screen is a very dark red, 30% is red glass over it, and the last 10% is the bright club red used as a claim — a title-winning season, a filled position, the primary button. Even the neutral panels are red-tinted rather than grey; the only thing that is not red is the type.</p>
       <p><strong>Type:</strong> the system UI stack, the same one iOS uses, so the site renders in SF Pro on a phone and Segoe UI on this laptop without downloading anything. Every number is tabular so columns line up; nothing is smaller than 11px.</p>
-      <p><strong>No licensed crest.</strong> Manchester United's badge is a trademark, and I have no right to hotlink it or copy it. So the site draws its own: an SVG shield for the club, and for players an initials disc coloured by position — gold for keepers, blue for defenders, green for midfield, pink for forwards.</p>
-      <p><strong>One theme, not two.</strong> The last version shipped a light and a dark mode; that is two design systems to keep in sync and it halved the attention each one got. Apple Sports' identity is the dark card, so this is a dark-first site and I spent the time on the panel, the wash and the tables instead.</p>
+      <p><strong>The crest and the faces are real.</strong> The club crest is the actual badge; the 22 player portraits are photographs, not drawings. Both are used under a clear rule, documented in the credit list below: the crest is the club's trademark (<em>fair use</em> on Wikipedia, so it is the first thing I would take down if this ever left a coursework context), while every player photograph is free-licensed — CC BY or CC BY-SA with the author named. Two players, Duncan Edwards and Gary Pallister, have no free-licensed portrait, so they keep a generated initials disc rather than a bad or stolen picture.</p>
+      <p><strong>One theme, not two.</strong> The last version shipped a light and a dark mode; that is two design systems to keep in sync and it halved the attention each one got. Apple Sports' identity is the dark card, so this is a dark-first site and I spent the time on the wash, the panel and the tables instead.</p>
 
       <h2>4. Build notes</h2>
       <ul>
@@ -132,8 +132,8 @@ assets/js/           legends.js  seasons.js  trophies.js  quiz.js
         <li><strong>It works from <code>file://</code>.</strong> All data is a plain script assigning to <code>window.UTD</code>, so there is no <code>fetch()</code> to break when someone double-clicks the file. (My first submission failed exactly there: the links were local paths, and the professor was right to call them invalid.)</li>
         <li><strong>Every link is relative and every page exists.</strong> The nav, the footer and the quiz corrections are all real files in the repository. Nothing points at a page I did not build.</li>
         <li><strong>State is small and visible.</strong> The XI builder and the quiz keep their state in one object and write it to <code>localStorage</code>; the filter and metric buttons only ever change one property.</li>
-        <li><strong>Accessibility as a constraint, not a decoration.</strong> Skip link; one <code>h1</code> per page; chart marks are focusable with a spoken label; the chart has a table twin; colour is never the only signal; visible focus rings; <code>prefers-reduced-motion</code> disables the reveal. The dark UI is checked for contrast: body text sits at 66–78% white, which clears 4.5:1 on #06060A.</li>
-        <li><strong>Performance by subtraction.</strong> No photographs, no web fonts, no libraries, no icon package. The crest is 1 SVG file under 1 kB and the avatars are CSS. The only network requests are the files themselves.</li>
+        <li><strong>Accessibility as a constraint, not a decoration.</strong> Skip link; one <code>h1</code> per page; chart marks are focusable with a spoken label; the chart has a table twin; colour is never the only signal; visible focus rings; <code>prefers-reduced-motion</code> disables the reveal. Body text sits at 74–100% white on #160206, which clears 4.5:1.</li>
+        <li><strong>Performance by subtraction.</strong> 22 portraits at 320px, one crest SVG, no web fonts, no libraries, no icon package — and every photograph is lazy-loaded. The whole site stays under a megabyte and works with JavaScript on a slow dorm connection.</li>
       </ul>
 
       <h2 id="sources">5. Where the numbers come from</h2>
@@ -146,7 +146,132 @@ assets/js/           legends.js  seasons.js  trophies.js  quiz.js
       </ul>
       <p>Where a figure is contested — the shared shields, whether the Second Division counts — the site says so instead of picking a number quietly. That principle is stated on the cabinet page and applied throughout: <strong>if a number cannot be checked, it does not go on the page.</strong></p>
 
-      <h2>6. How AI was used, honestly</h2>
+      <h2 id="credits">6. Image credits</h2>
+      <p>The crest is the club's registered trademark and the photograph on the Wikipedia file is marked <strong>Fair use</strong>. It is used here for non-commercial coursework only, with no claim of affiliation, and it is the first thing I would replace if this site ever went beyond a course submission.</p>
+      <p>Every player photograph is a real photograph, and every one of them is free-licensed. The authors and licences below come from the Wikimedia Commons metadata, and CC BY / CC BY-SA require exactly this credit:</p>
+      <div class="table-wrap">
+        <table>
+          <caption class="visually-hidden">Photograph authors and licences for the 24 players on this site</caption>
+          <thead>
+            <tr><th scope="col">Player</th><th scope="col">Photograph</th><th scope="col">Licence</th></tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Andy Cole</th>
+            <td>Norio NAKAYAMA from saitama, japan</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Bobby Charlton</th>
+            <td>ANEFO</td>
+            <td><a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Bryan Robson</th>
+            <td>Government of Thailand</td>
+            <td><a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Cristiano Ronaldo</th>
+            <td>Bryan Berlin</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">David Beckham</th>
+            <td>Soccer Aid for Unicef</td>
+            <td><a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Denis Irwin</th>
+            <td>Kjetil Ree</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Denis Law</th>
+            <td>Danny Molyneux</td>
+            <td><a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Edwin van der Sar</th>
+            <td>Web Summit</td>
+            <td><a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Eric Cantona</th>
+            <td>Georges Biard</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Gary Neville</th>
+            <td>University of Salford Press Office</td>
+            <td><a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">George Best</th>
+            <td>Bert Verhoeff for Anefo , NL-HaNA, ANEFO / neg. stroken, 1945-1989</td>
+            <td><a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en">CC0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Jaap Stam</th>
+            <td>Paul Blank</td>
+            <td><a href="https://creativecommons.org/licenses/by/2.5">CC BY 2.5</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Nemanja Vidić</th>
+            <td>user:Biso</td>
+            <td><a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Ole Gunnar Solskjær</th>
+            <td>Tor Atle Kleven</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Patrice Evra</th>
+            <td>Web Summit</td>
+            <td><a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Paul Scholes</th>
+            <td>James Adams</td>
+            <td><a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Peter Schmeichel</th>
+            <td>Carlsberg</td>
+            <td><a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Rio Ferdinand</th>
+            <td>Web Summit</td>
+            <td><a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Roy Keane</th>
+            <td>Irish Defence Forces from Ireland</td>
+            <td><a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Ruud van Nistelrooy</th>
+            <td>Ardfern</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Ryan Giggs</th>
+            <td>Дмитрий Голубович</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a></td>
+          </tr>
+          <tr>
+            <th scope="row" style="white-space:nowrap">Wayne Rooney</th>
+            <td>All-Pro Reels from District of Columbia, USA</td>
+            <td><a href="https://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="quiz-note" style="margin-top:.8rem">Two players — Duncan Edwards and Gary Pallister — have no free-licensed portrait on Commons, so they keep the generated initials disc. The Edwards lead image on Wikipedia is a photograph of his statue, which would have been worse than no photograph at all.</p>
+
+      <h2>7. How AI was used, honestly</h2>
       <p>This project was made with an AI assistant, and the professor's criticism of the first version — that it was one prompt and no thinking — is a fair description of what that version was. So here is the split, in the plainest terms I can manage:</p>
       <ul>
         <li><strong>Mine:</strong> the idea, the scope, the decision to drop everything except three datasets, the choice of the programme/paper aesthetic, the page structure, which players and which moments made the cut, the editorial rule about checkable numbers, and the judgement calls in every paragraph that has an opinion in it.</li>
@@ -155,7 +280,7 @@ assets/js/           legends.js  seasons.js  trophies.js  quiz.js
       </ul>
       <p>I am not claiming I typed every character. I am claiming I can explain every decision on it, which is the only version of this that survives being asked a question in class.</p>
 
-      <h2>7. What I would do next</h2>
+      <h2>8. What I would do next</h2>
       <ul>
         <li>Add the pre-1992 league seasons to the same chart, so the Ferguson era can be compared with Busby's rather than just with what came after.</li>
         <li>Make the XI builder check itself: warn when a chosen midfield has no defensive player, and let two XIs be compared side by side.</li>
@@ -170,7 +295,7 @@ assets/js/           legends.js  seasons.js  trophies.js  quiz.js
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <div class="footer__brand"><img src="assets/img/crest.svg" alt="" width="20" height="23">Red Devils Data Desk</div>
+        <div class="footer__brand"><img src="assets/img/crest-official.svg" alt="" width="20" height="23">Red Devils Data Desk</div>
         <p>An independent, non-commercial data project. Not affiliated with Manchester United Football Club. Built by WANG Youlin for the BiUH Web Technologies course, 2026.</p>
       </div>
       <div>
