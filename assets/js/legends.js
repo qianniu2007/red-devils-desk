@@ -89,6 +89,28 @@
     return parts[0].charAt(0) + '. ' + parts.slice(1).join(' ');
   }
 
+  /* Initials on a position colour: the stand-in for a headshot, and the one
+     piece of imagery a data site can honestly generate itself. */
+  function initials(name) {
+    var parts = name.replace(/[^\w\sÀ-ÿ]/g, '').split(/\s+/).filter(Boolean);
+    if (!parts.length) return '?';
+    if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+    return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+  }
+
+  function groupOf(player) {
+    var pos = player.slot[0];
+    if (pos === 'GK') return 'GK';
+    if (['RB', 'LB', 'CB'].indexOf(pos) > -1) return 'DF';
+    if (['CM', 'AM', 'RM', 'LM'].indexOf(pos) > -1) return 'MF';
+    return 'FW';
+  }
+
+  function avatar(player) {
+    return '<span class="avatar avatar--' + groupOf(player) + '" aria-hidden="true">' +
+      initials(player.name) + '</span>';
+  }
+
   function renderPitch() {
     SLOT_ORDER.forEach(function (slotId) {
       var btn = slots[slotId];
@@ -162,7 +184,8 @@
         var item = document.createElement('button');
         item.type = 'button';
         item.className = 'pick-item';
-        item.innerHTML = '<span>' + p.name + '</span><span>' + p.apps + ' apps · ' + p.goals + ' goals</span>';
+        item.innerHTML = '<span class="pick-item__who">' + avatar(p) + p.name + '</span>' +
+          '<span>' + p.apps + ' apps · ' + p.goals + ' goals</span>';
         item.addEventListener('click', function () {
           state.xi[slotId] = p.id;
           state.active = null;
@@ -312,10 +335,11 @@
       var tr = document.createElement('tr');
       var pos = p.slot.join(' / ');
       tr.innerHTML =
+        '<td class="avatar-cell">' + avatar(p) + '</td>' +
         '<th scope="row">' + p.name + '</th>' +
         '<td><span class="pill">' + pos + '</span></td>' +
         '<td>' + p.nation + '</td>' +
-        '<td class="num" style="text-align:left">' + p.years + '</td>' +
+        '<td style="white-space:nowrap">' + p.years + '</td>' +
         '<td class="num">' + p.apps + '</td>' +
         '<td class="num">' + p.goals + '</td>';
       tbody.appendChild(tr);

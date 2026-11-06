@@ -5,7 +5,9 @@ season since 1992–93, the full trophy cabinet, 24 players with their real
 appearance and goal totals, and an XI builder.
 
 Built with plain HTML, CSS and JavaScript. No framework, no build step, no
-dependencies, no back end, no tracking.
+dependencies, no back end, no tracking. Dark, glass-panelled interface in the
+grammar of the Apple Sports app — club-colour wash, an SVG crest drawn for this
+project, tabular numbers, standings-style tables.
 
 **Live:** https://qianniu2007.github.io/red-devils-desk/
 
@@ -79,7 +81,7 @@ assets/js/legends.js          XI builder + sortable index
 assets/js/seasons.js          the SVG chart + the table
 assets/js/trophies.js         cabinet filter + decade histogram
 assets/js/quiz.js             the quiz
-assets/img/                   favicon.svg, favicon-32/180.png, og.png
+assets/img/                   crest.svg, favicon.svg, favicon-32/180.png, og.png
 screenshots/                  desktop and mobile captures
 tools/                        qa.mjs, shot.mjs, make-favicons.py
 ```

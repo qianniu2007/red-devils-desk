@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About, sources &amp; process — Red Devils Data Desk</title>
 <meta name="description" content="Why this site exists, how it was planned, the design system behind it, where the numbers come from, and what AI was and was not used for.">
 <meta name="author" content="WANG Youlin">
-<meta name="theme-color" content="#f3eee4">
+<meta name="theme-color" content="#06060a">
 <link rel="canonical" href="https://qianniu2007.github.io/red-devils-desk/about.html">
 
 <meta property="og:type" content="website">
@@ -24,14 +24,8 @@
 <link rel="stylesheet" href="assets/css/site.css">
 
 <script>
-  (function () {
-    document.documentElement.classList.add('js');
-    try {
-      var saved = localStorage.getItem('rdd-theme');
-      var mode = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', mode);
-    } catch (e) { }
-  })();
+  /* Only used to scope the reveal styling: no theme switching any more. */
+  document.documentElement.classList.add('js');
 </script>
 </head>
 <body>
@@ -40,7 +34,7 @@
 <header class="masthead">
   <div class="wrap masthead__bar">
     <a class="brand" href="index.html">
-      <span class="brand__mark" aria-hidden="true">RD</span>
+      <img src="assets/img/crest.svg" alt="" width="24" height="27">
       <span class="brand__name"><b>Red Devils</b><span>Data Desk</span></span>
     </a>
     <nav class="nav" data-nav aria-label="Primary">
@@ -52,10 +46,6 @@
       <a href="about.html" aria-current="page">About</a>
     </nav>
     <div class="tools">
-      <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
-      </button>
       <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -65,9 +55,31 @@
 
 <main id="main">
   <section class="wrap hero">
-    <p class="kicker"><span class="dot" aria-hidden="true"></span>About · sources · process</p>
-    <h1>A project about<br>counting properly.</h1>
-    <p class="lead">This page is the part most course projects skip: the brief, the plan, the design decisions, where the numbers come from, and an honest account of which parts were made with AI and which were not.</p>
+    <div class="hero-card">
+      <div class="hero-card__top">
+        <img class="crest" src="assets/img/crest.svg" alt="" width="52" height="58">
+        <div class="hero-card__club">
+          <b>About</b>
+          <span>Sources · process · the honest bit</span>
+        </div>
+        <span class="pill-live">How it was made</span>
+      </div>
+
+      <h1>A project about<br>counting properly.</h1>
+      <p class="lead">This page is the part most course projects skip: the brief, the plan, the design decisions, where the numbers come from, and an honest account of which parts were made with AI and which were not.</p>
+
+      <div class="hero-figure">
+        <div class="hero-figure__main">
+          <span class="hero-figure__num">6</span>
+          <span class="hero-figure__label">pages, no framework,<br>no build step</span>
+        </div>
+        <ul class="hero-figure__rows">
+          <li><b>0</b><span>Dependencies</span></li>
+          <li><b>0</b><span>Web fonts</span></li>
+          <li><b>1</b><span>Data file</span></li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section class="wrap section">
@@ -94,23 +106,25 @@ about.html           the brief, the design system, the sources, the AI note
 
 assets/css/site.css  one stylesheet, tokens first
 assets/js/data.js    all of the data, in one file, no fetch()
-assets/js/site.js    theme, mobile menu, reveal, the counters
+assets/js/site.js    mobile menu, reveal, the counters
 assets/js/           legends.js  seasons.js  trophies.js  quiz.js
                      one file per page, no bundler</pre>
       <p>Two planning decisions mattered more than the rest. First, <strong>the data had to live in one file</strong>, because a project that repeats its numbers in five pages will eventually contradict itself. Second, <strong>every interactive page had to have a text version</strong> — the table under the chart exists for exactly that reason, and it is not a fallback for a broken site but the other half of the same information.</p>
 
       <h2>3. The design system</h2>
-      <p>I did not want the dark, rounded, gradient-card look that every student project converges on (including my last one). The reference was a matchday programme: cream paper, black ink, one red, thin rules, big serif numbers, and small monospaced labels doing the quiet work.</p>
+      <p>The reference is the Apple Sports match card on iOS: a dark surface washed in the club's colour, a crest, a large number where the score would be, and tables that look like league standings. Everything is a translucent panel over that wash — no flat grey boxes, no drop-shadow cards floating on white.</p>
       <div class="swatches" aria-label="Colour tokens">
-        <div class="swatch"><div class="swatch__chip" style="background:#f3eee4"></div><b>Paper</b><span>#F3EEE4 · background</span></div>
-        <div class="swatch"><div class="swatch__chip" style="background:#15120f"></div><b>Ink</b><span>#15120F · text, rules</span></div>
-        <div class="swatch"><div class="swatch__chip" style="background:#c8102e"></div><b>United red</b><span>#C8102E · accent</span></div>
-        <div class="swatch"><div class="swatch__chip" style="background:#a8802b"></div><b>Gold</b><span>#A8802B · trophy years</span></div>
-        <div class="swatch"><div class="swatch__chip" style="background:#6e6659"></div><b>Clay</b><span>#6E6659 · muted text</span></div>
-        <div class="swatch"><div class="swatch__chip" style="background:#d6cdbb"></div><b>Line</b><span>#D6CDBB · hairlines</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#06060a"></div><b>Night</b><span>#06060A · surface</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#ef2b45"></div><b>United red</b><span>#EF2B45 · accent</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#e3b23c"></div><b>Gold</b><span>#E3B23C · trophy years</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:#37c97a"></div><b>Live green</b><span>#37C97A · status</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:rgba(255,255,255,.09)"></div><b>Glass</b><span>9% white · panels</span></div>
+        <div class="swatch"><div class="swatch__chip" style="background:rgba(255,255,255,.5)"></div><b>Text</b><span>#F6F6F8 · 66% / 42% steps</span></div>
       </div>
-      <p>Roughly 60% paper, 30% ink, 10% red — the 60-30-10 rule from the planning lesson, followed literally. Red is never decoration: it marks a title-winning season, a primary action, or a live value. If something is red, it is a claim.</p>
-      <p><strong>Type:</strong> a system serif for display (Iowan Old Style → Palatino → Georgia), a system sans for body text, and a monospace for every number and label so digits line up in columns. No web fonts at all: nothing to download, nothing to wait for, and it renders identically offline in Hainan and in Bielefeld.</p>
+      <p>Roughly 60% night, 30% glass, 10% club red — the 60-30-10 rule from the planning lesson, rebuilt for a dark UI. Red is never decoration: it marks a title-winning season, a filled position, a primary action. If something is red, it is a claim.</p>
+      <p><strong>Type:</strong> the system UI stack, the same one iOS uses, so the site renders in SF Pro on a phone and Segoe UI on this laptop without downloading anything. Every number is tabular so columns line up; nothing is smaller than 11px.</p>
+      <p><strong>No licensed crest.</strong> Manchester United's badge is a trademark, and I have no right to hotlink it or copy it. So the site draws its own: an SVG shield for the club, and for players an initials disc coloured by position — gold for keepers, blue for defenders, green for midfield, pink for forwards.</p>
+      <p><strong>One theme, not two.</strong> The last version shipped a light and a dark mode; that is two design systems to keep in sync and it halved the attention each one got. Apple Sports' identity is the dark card, so this is a dark-first site and I spent the time on the panel, the wash and the tables instead.</p>
 
       <h2>4. Build notes</h2>
       <ul>
@@ -118,8 +132,8 @@ assets/js/           legends.js  seasons.js  trophies.js  quiz.js
         <li><strong>It works from <code>file://</code>.</strong> All data is a plain script assigning to <code>window.UTD</code>, so there is no <code>fetch()</code> to break when someone double-clicks the file. (My first submission failed exactly there: the links were local paths, and the professor was right to call them invalid.)</li>
         <li><strong>Every link is relative and every page exists.</strong> The nav, the footer and the quiz corrections are all real files in the repository. Nothing points at a page I did not build.</li>
         <li><strong>State is small and visible.</strong> The XI builder and the quiz keep their state in one object and write it to <code>localStorage</code>; the filter and metric buttons only ever change one property.</li>
-        <li><strong>Accessibility as a constraint, not a decoration.</strong> Skip link; one <code>h1</code> per page; chart marks are focusable with a spoken label; the chart has a table twin; colour is never the only signal; visible focus rings; <code>prefers-reduced-motion</code> disables the count-up and the reveal.</li>
-        <li><strong>Performance by subtraction.</strong> No images, no fonts, no libraries. The whole site is a few dozen kilobytes, and the only network requests are the files themselves.</li>
+        <li><strong>Accessibility as a constraint, not a decoration.</strong> Skip link; one <code>h1</code> per page; chart marks are focusable with a spoken label; the chart has a table twin; colour is never the only signal; visible focus rings; <code>prefers-reduced-motion</code> disables the reveal. The dark UI is checked for contrast: body text sits at 66–78% white, which clears 4.5:1 on #06060A.</li>
+        <li><strong>Performance by subtraction.</strong> No photographs, no web fonts, no libraries, no icon package. The crest is 1 SVG file under 1 kB and the avatars are CSS. The only network requests are the files themselves.</li>
       </ul>
 
       <h2 id="sources">5. Where the numbers come from</h2>
@@ -156,7 +170,7 @@ assets/js/           legends.js  seasons.js  trophies.js  quiz.js
   <div class="wrap">
     <div class="footer__grid">
       <div>
-        <div class="footer__brand"><span class="brand__mark" aria-hidden="true">RD</span>Red Devils Data Desk</div>
+        <div class="footer__brand"><img src="assets/img/crest.svg" alt="" width="20" height="23">Red Devils Data Desk</div>
         <p>An independent, non-commercial data project. Not affiliated with Manchester United Football Club. Built by WANG Youlin for the BiUH Web Technologies course, 2026.</p>
       </div>
       <div>

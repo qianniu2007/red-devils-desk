@@ -96,7 +96,7 @@
         var r = p.row.pos === 1 ? 5.5 : 3.5;
         parts.push(
           '<g class="bar-g" tabindex="0" role="img" aria-label="' + p.row.season + ': ' + ordinal(p.row.pos) + ', ' + p.row.pts + ' points. ' + p.row.mgr + '. ' + p.row.note.replace(/"/g, '&quot;') + '">' +
-          '<circle class="dot" cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="' + r + '"/>' +
+          '<circle class="dot' + (p.row.pos === 1 ? ' is-title' : '') + '" cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="' + r + '"/>' +
           '<circle cx="' + p.x.toFixed(1) + '" cy="' + p.y.toFixed(1) + '" r="14" fill="transparent"/>' +
           '</g>'
         );

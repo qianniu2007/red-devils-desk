@@ -1,34 +1,9 @@
-/* Shared behaviour for every page: theme, mobile menu, reveal, tickers. */
+/* Shared behaviour for every page: mobile menu, reveal, tickers, nav state.
+   The site is dark-only now, so the old theme switcher is gone. */
 (function () {
   'use strict';
 
-  /* ---- Theme ----------------------------------------------------------
-     Set as early as possible (see the inline snippet in <head>) so the page
-     never flashes the wrong colour. The button just flips the attribute. */
   var root = document.documentElement;
-  var themeBtn = document.querySelector('[data-theme-toggle]');
-
-  function setTheme(mode, remember) {
-    root.setAttribute('data-theme', mode);
-    if (themeBtn) {
-      themeBtn.setAttribute('aria-pressed', mode === 'dark' ? 'true' : 'false');
-      themeBtn.setAttribute(
-        'aria-label',
-        mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
-      );
-    }
-    if (remember) {
-      try { localStorage.setItem('rdd-theme', mode); } catch (e) { /* private mode */ }
-    }
-  }
-
-  if (themeBtn) {
-    themeBtn.addEventListener('click', function () {
-      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      setTheme(next, true);
-    });
-    setTheme(root.getAttribute('data-theme') || 'light', false);
-  }
 
   /* ---- Mobile menu ---------------------------------------------------- */
   var menuBtn = document.querySelector('[data-menu-toggle]');

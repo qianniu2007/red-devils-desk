@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 108" role="img" aria-label="Manchester United data desk mark">
+  <defs>
+    <linearGradient id="shield" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#e8253c"/>
+      <stop offset="0.55" stop-color="#c8102e"/>
+      <stop offset="1" stop-color="#700d1c"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".35"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- shield -->
+  <path d="M48 2 L90 14 V56 C90 82 71 97 48 106 C25 97 6 82 6 56 V14 Z" fill="url(#shield)"/>
+  <path d="M48 2 L90 14 V56 C90 82 71 97 48 106 C25 97 6 82 6 56 V14 Z" fill="url(#gloss)"/>
+  <path d="M48 7.5 L85 18 V56 C85 79.5 68 93 48 100.8 C28 93 11 79.5 11 56 V18 Z" fill="none" stroke="#f2d9a0" stroke-opacity=".55" stroke-width="1.4"/>
+
+  <!-- monogram -->
+  <text x="48" y="60" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#ffffff" letter-spacing="-1">MU</text>
+
+  <!-- gold rule + year -->
+  <rect x="30" y="68" width="36" height="1.6" fill="#f2d9a0" opacity=".8"/>
+  <text x="48" y="82" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-size="9" letter-spacing="2.4" fill="#f7e6bd" opacity=".9">1878</text>
+</svg>
