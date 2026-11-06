@@ -1,0 +1,37 @@
+Red Devils Data Desk — project description for the BiUH tracker
+(the text to paste into "Description")
+
+A data desk for Manchester United rather than a fan page: the numbers, made
+sortable. It holds three datasets — all 33 Premier League seasons from 1992–93 to
+2024–25 (finishing position, points, manager), the complete trophy cabinet (68
+major honours, every winning year, filterable by type and counted by decade), and
+24 players with their real appearance and goal totals. Three things are built on
+top of them: an XI builder where you pick a position, choose an eligible player
+and watch the combined totals change; an SVG chart that switches between points
+and finishing position and between the Ferguson era and the twelve seasons since;
+and a ten-question quiz where every correction links to the page that proves the
+answer.
+
+The interface follows the grammar of the Apple Sports match card: a deep
+Manchester United red surface, the real club crest, 22 real player photographs
+(every one free-licensed, with its author credited on the About page), large
+tabular numbers and standings-style tables for the season and player data. It is
+written in plain HTML, CSS and JavaScript — no framework, no build step, no back
+end, no external libraries or fonts — and every figure is checkable against a
+public record, which the About page documents along with the plan, the design
+system and an honest account of how AI was used.
+
+Live: https://qianniu2007.github.io/red-devils-desk/
+Repo: https://github.com/qianniu2007/red-devils-desk
+
+-------------------------------------------------------------------------------
+FIELD BY FIELD
+
+Title            Red Devils Data Desk
+Category         Apps & Tools   (Educational also acceptable)
+GitHub repo      https://github.com/qianniu2007/red-devils-desk
+Live site        https://qianniu2007.github.io/red-devils-desk/
+Desktop shot     submission/desktop-homepage.png     (1440 × 900)
+Mobile shot      submission/mobile-homepage.png      (780 × 1688 = 390 × 844 @2x)
+Open Graph       submission/open-graph-1200x630.png  (1200 × 630)
+Favicon          submission/favicon-32.png           (also favicon-180.png)
