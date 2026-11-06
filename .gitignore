@@ -12,3 +12,7 @@ Desktop.ini
 node_modules/
 __pycache__/
 *.pyc
+
+# local submission helper (reads credentials from the environment)
+tools/tracker.mjs
+
