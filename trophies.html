@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The cabinet — Red Devils Data Desk</title>
+<meta name="description" content="Every major Manchester United trophy with the year it was won: 20 league titles, 13 FA Cups, three European Cups and 68 in total.">
+<meta name="author" content="WANG Youlin">
+<meta name="theme-color" content="#f3eee4">
+<link rel="canonical" href="https://qianniu2007.github.io/red-devils-desk/trophies.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Red Devils Data Desk">
+<meta property="og:title" content="The cabinet — Red Devils Data Desk">
+<meta property="og:description" content="68 major trophies, every winning year, grouped by competition and counted by decade.">
+<meta property="og:url" content="https://qianniu2007.github.io/red-devils-desk/trophies.html">
+<meta property="og:image" content="https://qianniu2007.github.io/red-devils-desk/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/favicon-180.png">
+<link rel="stylesheet" href="assets/css/site.css">
+
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('rdd-theme');
+      var mode = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', mode);
+    } catch (e) { }
+  })();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="masthead">
+  <div class="wrap masthead__bar">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true">RD</span>
+      <span class="brand__name"><b>Red Devils</b><span>Data Desk</span></span>
+    </a>
+    <nav class="nav" data-nav aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="legends.html">Legends</a>
+      <a href="seasons.html">Seasons</a>
+      <a href="trophies.html" aria-current="page">Cabinet</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="tools">
+      <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false" aria-label="Switch to dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap hero">
+    <p class="kicker"><span class="dot" aria-hidden="true"></span>Cabinet · 68 major trophies</p>
+    <h1>Sixty-eight reasons<br>the arguments happen.</h1>
+    <p class="lead">A trophy cabinet is only impressive until someone counts it properly. This is the count: every major honour, every winning year, grouped by what it was and when it was won.</p>
+    <div class="cabinet-total">
+      <span class="visually-hidden">Total major trophies:</span>
+      <b data-total>68</b>
+      <span style="font-family:var(--font-mono);font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:var(--clay)">Major trophies, 1908 – 2024</span>
+    </div>
+  </section>
+
+  <section class="wrap section" aria-labelledby="cab-title">
+    <div class="section-head">
+      <h2 id="cab-title">The cabinet</h2>
+      <p class="section-note">Filter by type. Dashed years are shared titles — a real thing that happened, and a real argument that follows.</p>
+    </div>
+
+    <div class="controls">
+      <div class="chips" role="group" aria-label="Competition type">
+        <button class="chip" type="button" data-group="all" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-group="domestic" aria-pressed="false">Domestic</button>
+        <button class="chip" type="button" data-group="european" aria-pressed="false">European</button>
+        <button class="chip" type="button" data-group="worldwide" aria-pressed="false">Worldwide</button>
+      </div>
+      <span class="result-count" data-cab-count></span>
+    </div>
+
+    <div class="cabinet" id="cabinet"></div>
+    <noscript><p style="margin-top:1rem">This cabinet is rendered from a data file, so it needs JavaScript. The same counts are printed in the paragraph below.</p></noscript>
+  </section>
+
+  <section class="wrap section" aria-labelledby="decade-title">
+    <div class="section-head">
+      <h2 id="decade-title">When they were won</h2>
+      <p class="section-note">Every trophy in the cabinet, counted into the decade it was lifted in. The 1990s and 2000s do most of the work.</p>
+    </div>
+    <div class="chart-shell">
+      <div class="decade-chart" id="decades"></div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="prose">
+      <p class="kicker"><span class="dot" aria-hidden="true"></span>The counting rules</p>
+      <h2>Why 68, and not 69 or 71</h2>
+      <p>The commonly quoted total is <strong>68</strong>, and it counts only major honours: 20 league titles, 13 FA Cups, 6 League Cups, 21 Community Shields, 3 European Cups, and one each of the Cup Winners' Cup, European Super Cup, Europa League, Intercontinental Cup and Club World Cup.</p>
+      <p>Two things get argued about every time this number appears:</p>
+      <ul>
+        <li><strong>Shared shields.</strong> Four Charity/Community Shields were shared rather than won outright (1965, 1967, 1977, 1990). They are included here because the club counts them, and marked with a dashed border so you can subtract them yourself.</li>
+        <li><strong>What counts as “major”.</strong> Second Division titles, the Manchester Cup and the Lancashire Cup are real trophies and are not in this total. Neither is the 1999 Treble as a separate item — it is three of the trophies above landing in eleven days.</li>
+      </ul>
+      <p>If you want the stricter number, remove the four shared shields: <strong>64 outright</strong>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand"><span class="brand__mark" aria-hidden="true">RD</span>Red Devils Data Desk</div>
+        <p>An independent, non-commercial data project. Not affiliated with Manchester United Football Club.</p>
+      </div>
+      <div>
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="legends.html">Legends</a></li>
+          <li><a href="seasons.html">Seasons</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Project</h2>
+        <ul>
+          <li><a href="about.html">About &amp; sources</a></li>
+          <li><a href="https://github.com/qianniu2007/red-devils-desk">Source on GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__base">
+      <span>© <span data-year>2026</span> WANG Youlin</span>
+      <span>Plain HTML · CSS · JavaScript</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/trophies.js"></script>
+</body>
+</html>
