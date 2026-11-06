@@ -915,7 +915,7 @@ select:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
   margin: 0 0 1.2rem;
 }
 
-.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 1rem 0 1.6rem; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); margin: 1rem 0 1.6rem; }
 .swatch { background: var(--paper); padding: .8rem; }
 .swatch__chip { height: 46px; border-radius: 1px; margin-bottom: .55rem; border: 1px solid rgba(0,0,0,.12); }
 .swatch b { display: block; font-size: .85rem; }
@@ -979,8 +979,11 @@ select:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
   border: 0;
 }
 
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
-.reveal.is-in { opacity: 1; transform: none; }
+/* Scoped to html.js so that a browser with scripts off (or a crawler reading
+   the raw HTML) still gets every section visible. Hiding content by default and
+   relying on JavaScript to reveal it is how pages end up blank. */
+html.js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+html.js .reveal.is-in { opacity: 1; transform: none; }
 
 .mt-0 { margin-top: 0; }
 .mt-1 { margin-top: .5rem; }
@@ -1058,11 +1061,12 @@ select:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
     animation-iteration-count: 1 !important;
     transition-duration: .001ms !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  html.js .reveal { opacity: 1; transform: none; }
 }
 
 @media print {
   .masthead, .footer, .hero__actions, .tools { display: none; }
   body { background: #fff; color: #000; }
+  html.js .reveal { opacity: 1; transform: none; }
   .card, .table-wrap, .chart-shell { break-inside: avoid; }
 }

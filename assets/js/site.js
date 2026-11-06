@@ -78,6 +78,13 @@
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
 
     Array.prototype.forEach.call(revealables, function (el) { io.observe(el); });
+
+    /* Failsafe: an element that never reports as intersecting — a screenshot
+       tool, a very fast scroll, a browser that batches the callback late —
+       must never stay invisible. After a moment, show everything. */
+    setTimeout(function () {
+      Array.prototype.forEach.call(revealables, function (el) { el.classList.add('is-in'); });
+    }, 900);
   }
 
   /* ---- "Since then" tickers -------------------------------------------

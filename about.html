@@ -25,6 +25,7 @@
 
 <script>
   (function () {
+    document.documentElement.classList.add('js');
     try {
       var saved = localStorage.getItem('rdd-theme');
       var mode = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -83,16 +84,19 @@
 
       <h2 id="process">2. The plan, before any code</h2>
       <p>One page of planning, one sitemap, then wireframes on paper. The wireframes are not reproduced here because they are pencil on the back of a lecture handout, but the structure they produced is this:</p>
-      <pre class="ascii">index.html            the pitch: 20 titles, 68 trophies, four "since then" counters,
-   │                  a nine-card era timeline, four doors into the data
-   ├── legends.html   24 players + XI builder (4-3-3, localStorage) + sortable index
-   ├── seasons.html   33 PL seasons: bar chart ⇄ line chart, manager filter, table
-   ├── trophies.html  10 competitions, every winning year, decade histogram
-   ├── quiz.html      10 questions, each answer linking to its own receipt
-   └── about.html     this page
+      <pre class="ascii">index.html           the pitch: 20 titles, 68 trophies, four counters,
+                     a nine-moment timeline, four ways into the data
+legends.html         24 players, the XI builder, the sortable index
+seasons.html         33 Premier League seasons: chart, era filter, table
+trophies.html        10 competitions, every winning year, by decade
+quiz.html            10 questions, each correction links to its source
+about.html           the brief, the design system, the sources, the AI note
 
-shared: assets/css/site.css · assets/js/data.js · assets/js/site.js
-        assets/js/{legends,seasons,trophies,quiz}.js — one file per page</pre>
+assets/css/site.css  one stylesheet, tokens first
+assets/js/data.js    all of the data, in one file, no fetch()
+assets/js/site.js    theme, mobile menu, reveal, the counters
+assets/js/           legends.js  seasons.js  trophies.js  quiz.js
+                     one file per page, no bundler</pre>
       <p>Two planning decisions mattered more than the rest. First, <strong>the data had to live in one file</strong>, because a project that repeats its numbers in five pages will eventually contradict itself. Second, <strong>every interactive page had to have a text version</strong> — the table under the chart exists for exactly that reason, and it is not a fallback for a broken site but the other half of the same information.</p>
 
       <h2>3. The design system</h2>

@@ -25,6 +25,7 @@
 
 <script>
   (function () {
+    document.documentElement.classList.add('js');
     try {
       var saved = localStorage.getItem('rdd-theme');
       var mode = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');

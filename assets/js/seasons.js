@@ -110,7 +110,8 @@
       : M.top + plotH * ((mean - 1) / 19);
 
     parts.push('<line class="avg-line" x1="' + M.left + '" x2="' + (W - M.right) + '" y1="' + meanY.toFixed(1) + '" y2="' + meanY.toFixed(1) + '"/>');
-    parts.push('<text class="axis-label" x="' + (W - M.right) + '" y="' + (meanY - 7).toFixed(1) + '" text-anchor="end" style="fill:var(--ink)">average ' + (isPts ? mean.toFixed(1) : mean.toFixed(1)) + (isPts ? ' pts' : 'th') + '</text>');
+    var meanLabel = isPts ? 'average ' + mean.toFixed(1) + ' pts' : 'average finish ' + mean.toFixed(1);
+    parts.push('<text class="axis-label" x="' + (W - M.right) + '" y="' + (meanY - 7).toFixed(1) + '" text-anchor="end" style="fill:var(--ink)">' + meanLabel + '</text>');
 
     /* -- x labels: every fourth season, plus the last one -- */
     rows.forEach(function (row, i) {

@@ -145,6 +145,17 @@ function connect(wsUrl) {
       const overflow = m.w > m.vw ? `  OVERFLOW by ${m.w - m.vw}px` : '';
       console.log(`${page} ${mobile ? 'mobile' : 'desktop'} ${m.vw}x${m.h}${overflow}`);
 
+      /* Full-page captures have to scroll through the document first: sections
+         below the fold are revealed by an IntersectionObserver, so a naive
+         captureBeyondViewport screenshots them while still invisible. */
+      if (full) {
+        await cdp.send('Runtime.evaluate', {
+          expression: '(async () => { const step = innerHeight; const h = document.documentElement.scrollHeight; for (let y = 0; y < h; y += step) { scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } scrollTo(0, 0); })()',
+          awaitPromise: true
+        });
+        await sleep(800);
+      }
+
       const shot = await cdp.send('Page.captureScreenshot', {
         format: 'png',
         captureBeyondViewport: full,
