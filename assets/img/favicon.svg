@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Red Devils Data Desk">
+  <title>Red Devils Data Desk</title>
+  <rect width="64" height="64" rx="6" fill="#c8102e"/>
+  <rect x="7" y="8" width="50" height="48" fill="none" stroke="#f3eee4" stroke-width="1.5" opacity=".55"/>
+  <text x="32" y="41" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-weight="700" fill="#f3eee4" letter-spacing="-1">RD</text>
+  <rect x="22" y="47" width="20" height="2" fill="#e6c778"/>
+</svg>
