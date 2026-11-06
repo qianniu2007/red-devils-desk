@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex">
+<title>Open Graph card — Red Devils Data Desk</title>
+<!--
+  This file is not part of the site: it is the artwork for the social card.
+  Rendered once to assets/img/og.png at exactly 1200×630 with:
+
+    msedge --headless=new --disable-gpu --hide-scrollbars \
+           --window-size=1200,630 --screenshot=assets/img/og.png og-card.html
+-->
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #f3eee4;
+    color: #15120f;
+    font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    padding: 58px 64px 46px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .grain {
+    position: absolute; inset: 0;
+    background-image: radial-gradient(#d6cdbb .6px, transparent .6px);
+    background-size: 4px 4px;
+    opacity: .55;
+  }
+  .top { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #d6cdbb; padding-bottom: 16px; position: relative; }
+  .kicker { font-family: "Cascadia Mono", Consolas, monospace; font-size: 15px; letter-spacing: .18em; text-transform: uppercase; color: #6e6659; }
+  .kicker b { color: #c8102e; }
+  .body { display: flex; flex: 1; gap: 40px; align-items: center; position: relative; }
+  .left { flex: 1; }
+  h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 92px;
+    line-height: .98;
+    letter-spacing: -.02em;
+    font-weight: 600;
+    margin-bottom: 22px;
+  }
+  h1 em { font-style: normal; color: #c8102e; }
+  p { font-size: 23px; line-height: 1.45; color: #3a342c; max-width: 620px; }
+  .right { width: 300px; border-left: 1px solid #d6cdbb; padding-left: 34px; }
+  .num { font-family: Georgia, "Times New Roman", serif; font-size: 132px; line-height: .85; color: #c8102e; letter-spacing: -.04em; }
+  .num-label { font-family: "Cascadia Mono", Consolas, monospace; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: #6e6659; margin: 10px 0 26px; }
+  .rows { font-family: "Cascadia Mono", Consolas, monospace; font-size: 14px; color: #3a342c; }
+  .rows div { display: flex; justify-content: space-between; border-top: 1px dotted #b9ad96; padding-top: 7px; margin-top: 7px; }
+  .rows b { font-weight: 700; }
+  .foot { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #d6cdbb; padding-top: 16px; font-family: "Cascadia Mono", Consolas, monospace; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #6e6659; position: relative; }
+  .mark { display: inline-flex; align-items: center; gap: 10px; }
+  .mark i { width: 26px; height: 26px; background: #c8102e; color: #f3eee4; font-family: Georgia, serif; font-size: 14px; display: grid; place-items: center; font-style: normal; }
+</style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="top">
+    <span class="kicker"><b>●</b> Manchester United · a data desk</span>
+    <span class="kicker">1992–93 → 2024–25</span>
+  </div>
+
+  <div class="body">
+    <div class="left">
+      <h1>Red Devils<br><em>Data Desk</em></h1>
+      <p>Every Premier League season on one chart, 68 trophies with their years, and an XI you build yourself.</p>
+    </div>
+    <div class="right">
+      <div class="num">20</div>
+      <div class="num-label">League titles</div>
+      <div class="rows">
+        <div><span>European trophies</span><b>6</b></div>
+        <div><span>Major trophies</span><b>68</b></div>
+        <div><span>Record apps</span><b>963</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="mark"><i>RD</i> qianniu2007.github.io/red-devils-desk</span>
+    <span>HTML · CSS · JavaScript</span>
+  </div>
+</body>
+</html>
