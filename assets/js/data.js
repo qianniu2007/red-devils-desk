@@ -19,12 +19,12 @@ window.UTD = (function () {
     { season: '1992–93', pos: 1,  pts: 84, mgr: 'Ferguson',  note: 'The first Premier League title — and the end of a 26-year wait.' },
     { season: '1993–94', pos: 1,  pts: 92, mgr: 'Ferguson',  note: 'League and FA Cup double; Cantona’s first full season.' },
     { season: '1994–95', pos: 2,  pts: 88, mgr: 'Ferguson',  note: 'Lost the title to Blackburn on the final day by one point.' },
-    { season: '1995–96', pos: 1,  pts: 82, mgr: 'Ferguson',  note: 'Eleven points behind Newcastle in January, won by five.' },
+    { season: '1995–96', pos: 1,  pts: 82, mgr: 'Ferguson',  note: 'Twelve points adrift of Newcastle at one stage, won by five.' },
     { season: '1996–97', pos: 1,  pts: 75, mgr: 'Ferguson',  note: 'Cantona’s last season; fourth title in five years.' },
     { season: '1997–98', pos: 2,  pts: 77, mgr: 'Ferguson',  note: 'Arsenal’s double season; United finished second.' },
-    { season: '1998–99', pos: 1,  pts: 79, mgr: 'Ferguson',  note: 'The Treble. League, FA Cup and European Cup in eleven days.' },
+    { season: '1998–99', pos: 1,  pts: 79, mgr: 'Ferguson',  note: 'The Treble. League, FA Cup and European Cup in ten days.' },
     { season: '1999–2000', pos: 1,  pts: 91, mgr: 'Ferguson', note: 'Won the league by 18 points, a Premier League record margin.' },
-    { season: '2000–01', pos: 1,  pts: 80, mgr: 'Ferguson',  note: 'Third title in a row — the first club to do it twice.' },
+    { season: '2000–01', pos: 1,  pts: 80, mgr: 'Ferguson',  note: 'Third title in a row — the fourth club in English history to manage it.' },
     { season: '2001–02', pos: 3,  pts: 77, mgr: 'Ferguson',  note: 'Third place behind Arsenal and Liverpool.' },
     { season: '2002–03', pos: 1,  pts: 83, mgr: 'Ferguson',  note: 'Overtook Arsenal in the run-in; van Nistelrooy scored 25.' },
     { season: '2003–04', pos: 3,  pts: 75, mgr: 'Ferguson',  note: 'Arsenal went unbeaten; United third, but won the FA Cup.' },
@@ -32,7 +32,7 @@ window.UTD = (function () {
     { season: '2005–06', pos: 2,  pts: 83, mgr: 'Ferguson',  note: 'Runners-up; the League Cup was the only trophy.' },
     { season: '2006–07', pos: 1,  pts: 89, mgr: 'Ferguson',  note: 'Ronaldo and Rooney take over; first title in four years.' },
     { season: '2007–08', pos: 1,  pts: 87, mgr: 'Ferguson',  note: 'League and Champions League double — Moscow, penalties.' },
-    { season: '2008–09', pos: 1,  pts: 90, mgr: 'Ferguson',  note: 'Third straight title and the Club World Cup in Japan.' },
+    { season: '2008–09', pos: 1,  pts: 90, mgr: 'Ferguson',  note: 'Third straight title — the first English club to do it twice — plus the Club World Cup.' },
     { season: '2009–10', pos: 2,  pts: 85, mgr: 'Ferguson',  note: 'One point behind Chelsea; Rooney scored 34 in all competitions.' },
     { season: '2010–11', pos: 1,  pts: 80, mgr: 'Ferguson',  note: 'A 19th league title, passing Liverpool’s record.' },
     { season: '2011–12', pos: 2,  pts: 89, mgr: 'Ferguson',  note: 'Lost the title on goal difference to Agüero’s last kick.' },
@@ -48,7 +48,7 @@ window.UTD = (function () {
     { season: '2021–22', pos: 6,  pts: 58, mgr: 'Solskjær / Rangnick', note: 'Ronaldo returned; the season did not.' },
     { season: '2022–23', pos: 3,  pts: 75, mgr: 'Ten Hag',   note: 'Third and the League Cup — the first trophy in six years.' },
     { season: '2023–24', pos: 8,  pts: 60, mgr: 'Ten Hag',   note: 'Eighth, the worst finish of the Premier League era, plus the FA Cup.' },
-    { season: '2024–25', pos: 15, pts: 42, mgr: 'Ten Hag / Amorim', note: 'A fifteenth-place finish — the lowest in the club’s top-flight history.' }
+    { season: '2024–25', pos: 15, pts: 42, mgr: 'Ten Hag / Amorim', note: 'A fifteenth-place finish — the club’s worst since 1974.' }
   ];
 
   /* ---- Players ----------------------------------------------------------
@@ -141,7 +141,7 @@ window.UTD = (function () {
     { year: '1958', title: 'Munich', text: 'The plane carrying the Busby Babes crashes on the runway at Munich. Twenty-three people die, eight of them players.' },
     { year: '1968', title: 'European champions', text: 'Ten years after Munich, a team built around Charlton, Best and Law becomes the first English club to lift the European Cup.' },
     { year: '1986', title: 'Ferguson arrives', text: 'Appointed in November with the club near the bottom of the table. The first three years are worse, not better.' },
-    { year: '1999', title: 'The Treble', text: 'League, FA Cup and Champions League inside eleven days, the last of them two goals down in stoppage time in Barcelona.' },
+    { year: '1999', title: 'The Treble', text: 'League, FA Cup and Champions League inside ten days, the last of them two goals down in stoppage time in Barcelona.' },
     { year: '2008', title: 'Moscow', text: 'A third European Cup on penalties in the rain, the same season as a tenth Premier League title.' },
     { year: '2013', title: 'The end of an era', text: 'Ferguson retires after a 20th league title. Nothing since has been the same, which is the honest reason this site exists.' }
   ];

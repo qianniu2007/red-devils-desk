@@ -36,7 +36,7 @@
       q: 'How many points did United take from the 2024–25 Premier League season?',
       a: ['42', '52', '58', '64'],
       correct: 0,
-      why: 'Forty-two points and a 15th-place finish — the lowest league position in the club’s history.',
+      why: 'Forty-two points and a 15th-place finish — the club’s lowest finish since 1974.',
       source: { href: 'seasons.html', label: 'Season by season' }
     },
     {
